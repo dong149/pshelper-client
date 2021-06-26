@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
-
+/*global chrome*/
+import React from 'react';
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const onTest = () => {
+        console.log('test');
+        chrome.extension
+            .getBackgroundPage()
+            .console.log('handleAlgorithmIsToggled');
+    };
+
+    return (
+        <div className="App">
+            <button onClick={() => onTest()}>test</button>
+        </div>
+    );
 }
 
 export default App;
