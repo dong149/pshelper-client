@@ -1,0 +1,62 @@
+.Popup {
+    text-align: center;
+  }
+  
+  .Popup-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 350px;
+  }
+  
+  .App-logo {
+    margin: 10px 0;
+    pointer-events: none;
+    
+  }
+  
+  .Logo {
+    font-family: 'Didact Gothic', sans-serif;
+    font-size: 28px;
+  }
+  
+  .Logo-sub {
+    text-align: right !important;
+    color: rgb(59,96,229);    
+    margin-top: -7px;
+    font-family: 'Didact Gothic', sans-serif;
+    font-size: smaller;
+  }
+  
+  .Discription {
+    font-family: 'Didact Gothic', sans-serif;
+    margin: 5px 0 100px 0;
+    width: 300px;
+  }
+  
+  .Discription-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  
+  .Discription-sub {
+    text-align: left;
+    color: rgb(124, 127, 146);
+  }
+  
+  .Swich-body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: 'Didact Gothic', sans-serif;
+    font-size: 16px;
+    margin: 15px 0;
+  }
+  
+  .Input {
+    width: 240px;
+    margin: 20px 0;
+  }

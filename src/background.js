@@ -1,7 +1,53 @@
 // apis
+const baseURL = 'http://localhost:8080';
 let problem_id = null;
 let content = null;
 let input = null;
+
+// function postHighlight(prameter) {
+//     console.log('postHighlight');
+//     const req = new XMLHttpRequest();
+//     let url = baseURL + `/api/v1/highlight`;
+//     const urlParams = JSON.stringify(prameter);
+
+//     req.open('POST', url, true);
+//     req.responseType = 'json';
+//     req.setRequestHeader('Content-type', 'application/json');
+
+//     req.onload = () => {
+//         var data = req.response;
+//         console.log(data);
+//         chrome.tabs.query(
+//             { active: true, currentWindow: true },
+//             function (tabs) {
+//                 chrome.tabs.sendMessage(
+//                     tabs[0].id,
+//                     { content: 'addHighlightdDOM', result: data.sentence_list },
+//                     function (response) {
+//                         if (response) {
+//                             console.log(response);
+//                         }
+//                     }
+//                 );
+//             }
+//         );
+//     };
+//     req.send(urlParams);
+// }
+
+// function turnOffHighlight() {
+//     chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+//         chrome.tabs.sendMessage(
+//             tabs[0].id,
+//             { content: 'turnOffHighlight' },
+//             function (response) {
+//                 if (response) {
+//                     console.log(response);
+//                 }
+//             }
+//         );
+//     });
+// }
 
 /*global chrome*/
 chrome.runtime.onInstalled.addListener(function (details) {
@@ -27,10 +73,15 @@ chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
 
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     console.log(request);
-    // if (request.action === 'postAnalyzeAlgorithm') {
-    //     if (problem_id && content && input) {
-    //         // postAnalyzeAlgorithm({problem_id, content, input});
-    //         // sendResponse({message: "postAnalyzeAlgorithm STARTED"});
-    //     }
-    // }
+    if (request.action === 'postHighlight') {
+        sendResponse({ message: 'postHighlight STARTED' });
+        if (problem_id && content && input) {
+            // postHighlight({ problem_id, content, input });
+            // sendResponse({ message: 'postHighlight STARTED' });
+        }
+    }
+    if (request.action === 'turnOffHighlight') {
+        // turnOffHighlight();
+        sendResponse({ message: 'turnOffHighlight STARTED' });
+    }
 });
