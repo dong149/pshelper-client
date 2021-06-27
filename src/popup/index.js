@@ -21,7 +21,7 @@ const PopUp = () => {
                 { action: 'postHighlight' },
                 function (response) {
                     console.log(response.message);
-                    // chrome.extension.getBackgroundPage().console.log(response);
+                    chrome.extension.getBackgroundPage().console.log(response);
                 }
             );
         } else {
@@ -29,7 +29,7 @@ const PopUp = () => {
                 { action: 'turnOffHighlight' },
                 function (response) {
                     console.log(response.message);
-                    // chrome.extension.getBackgroundPage().console.log(response);
+                    chrome.extension.getBackgroundPage().console.log(response);
                 }
             );
         }
@@ -56,7 +56,7 @@ const PopUp = () => {
                             </S.CheckBoxWrapper>
                         </div> */}
                     <div className="Swich-body">
-                        접속사, 문장 구분 기능
+                        문장 하이라이팅 기능
                         <S.CheckBoxWrapper>
                             <S.CheckBox
                                 id="highlight"
